@@ -36,21 +36,31 @@ const AuthHandler: React.FC = () => {
         
         try {
           // code를 사용하여 세션 설정
+          console.log('exchangeCodeForSession 호출 시작...');
           const { data, error } = await supabase.auth.exchangeCodeForSession(code);
           
           if (error) {
             console.error('코드 교환 오류:', error);
+            console.error('에러 상세:', {
+              message: error.message,
+              status: error.status,
+              name: error.name
+            });
             navigate('/password-reset?error=invalid_code');
             return;
           }
 
           if (data.session) {
             console.log('세션이 설정되었습니다:', data.session);
+            console.log('사용자 정보:', data.user);
             // 비밀번호 재설정 확인 페이지로 이동
             navigate('/password-reset/confirm');
+          } else {
+            console.log('세션 데이터가 없습니다:', data);
+            navigate('/password-reset?error=no_session');
           }
         } catch (error) {
-          console.error('코드 처리 중 오류:', error);
+          console.error('코드 처리 중 예외 발생:', error);
           navigate('/password-reset?error=processing_error');
         }
         return;

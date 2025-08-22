@@ -54,6 +54,25 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
    - `https://www.anyfesta.com/email-verification`
 3. **Email Templates 설정**: Authentication > Email Templates에서 비밀번호 재설정 이메일 템플릿의 Action URL이 올바르게 설정되어 있는지 확인
 
+#### 문제 해결
+
+**"비밀번호 재설정 코드가 유효하지 않습니다" 에러가 발생하는 경우:**
+
+1. **Supabase 프로젝트 설정 확인**:
+   - Site URL이 `https://anyfesta.com`으로 정확히 설정되어 있는지 확인
+   - Redirect URLs에 `/password-reset/confirm` 경로가 포함되어 있는지 확인
+
+2. **브라우저 개발자 도구 확인**:
+   - Console 탭에서 에러 메시지 확인
+   - Network 탭에서 Supabase API 호출 상태 확인
+
+3. **환경 변수 확인**:
+   - `.env` 파일에 올바른 Supabase URL과 API 키가 설정되어 있는지 확인
+
+4. **도메인 설정 확인**:
+   - `anyfesta.com`과 `www.anyfesta.com` 중 어떤 도메인을 사용하는지 확인
+   - Supabase 설정과 일치하는지 확인
+
 ### 개발 서버 실행
 
 ```bash

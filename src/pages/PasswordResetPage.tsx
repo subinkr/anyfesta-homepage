@@ -24,6 +24,9 @@ const PasswordResetPage: React.FC = () => {
         case 'processing_error':
           errorMessage = '비밀번호 재설정 처리 중 오류가 발생했습니다. 다시 시도해주세요.';
           break;
+        case 'no_session':
+          errorMessage = '세션을 생성할 수 없습니다. 비밀번호 재설정을 다시 요청해주세요.';
+          break;
         default:
           errorMessage = '비밀번호 재설정 중 오류가 발생했습니다. 다시 시도해주세요.';
       }
