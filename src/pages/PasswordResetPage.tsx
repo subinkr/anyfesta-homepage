@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
 const PasswordResetPage: React.FC = () => {
@@ -6,6 +7,16 @@ const PasswordResetPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    // URL에서 에러 파라미터 확인
+    const error = searchParams.get('error');
+    if (error === 'session_error') {
+      setMessage('비밀번호 재설정 링크가 만료되었거나 유효하지 않습니다. 다시 시도해주세요.');
+      setIsSuccess(false);
+    }
+  }, [searchParams]);
 
   const handlePasswordReset = async (e: React.FormEvent) => {
     e.preventDefault();

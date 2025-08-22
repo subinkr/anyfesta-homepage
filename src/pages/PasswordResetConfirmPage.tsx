@@ -8,21 +8,41 @@ const PasswordResetConfirmPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isValidSession, setIsValidSession] = useState(false);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    // URL에서 토큰 확인
-    const token = searchParams.get('token');
-    if (!token) {
-      setMessage('유효하지 않은 링크입니다.');
-      setIsSuccess(false);
-    }
-  }, [searchParams]);
+    // 현재 세션 상태 확인
+    const checkSession = async () => {
+      const { data: { session }, error } = await supabase.auth.getSession();
+      
+      if (error || !session) {
+        setMessage('유효하지 않은 링크입니다. 비밀번호 재설정을 다시 요청해주세요.');
+        setIsValidSession(false);
+        return;
+      }
+
+      // recovery 타입인지 확인 (비밀번호 재설정용)
+      if (session.user.app_metadata?.provider === 'email' && session.user.aud === 'authenticated') {
+        setIsValidSession(true);
+      } else {
+        setMessage('유효하지 않은 링크입니다. 비밀번호 재설정을 다시 요청해주세요.');
+        setIsValidSession(false);
+      }
+    };
+
+    checkSession();
+  }, []);
 
   const handlePasswordUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!isValidSession) {
+      setMessage('유효하지 않은 세션입니다.');
+      return;
+    }
+
     if (!password || !confirmPassword) {
       setMessage('모든 필드를 입력해주세요.');
       setIsSuccess(false);
@@ -55,6 +75,9 @@ const PasswordResetConfirmPage: React.FC = () => {
 
       setMessage('비밀번호가 성공적으로 변경되었습니다.');
       setIsSuccess(true);
+      
+      // 비밀번호 변경 후 로그아웃
+      await supabase.auth.signOut();
     } catch (error: any) {
       setMessage(error.message || '비밀번호 변경 중 오류가 발생했습니다.');
       setIsSuccess(false);
@@ -62,6 +85,46 @@ const PasswordResetConfirmPage: React.FC = () => {
       setIsLoading(false);
     }
   };
+
+  // 유효하지 않은 세션이면 에러 메시지 표시
+  if (!isValidSession && !isSuccess) {
+    return (
+      <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              링크 오류
+            </h1>
+            <p className="text-gray-600 mb-8">
+              {message}
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="text-center space-y-6">
+              <a 
+                href="/password-reset" 
+                className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors block text-center"
+              >
+                비밀번호 재설정 다시 요청하기
+              </a>
+              <a 
+                href="/" 
+                className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors block text-center"
+              >
+                홈페이지로 돌아가기
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (isSuccess) {
     return (
