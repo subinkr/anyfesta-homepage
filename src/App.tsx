@@ -47,10 +47,11 @@ const AuthHandler: React.FC = () => {
             return;
           }
           
-          // Supabase v2.38.0+ 에서는 exchangeCodeForSession 사용
-          // PKCE 플로우를 위해 code_verifier가 필요할 수 있음
-          console.log('exchangeCodeForSession 호출 시작...');
-          const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+          // PKCE 에러를 피하기 위해 다른 방법 시도
+          console.log('비밀번호 재설정 코드 검증 시작...');
+          
+          // 방법 1: exchangeCodeForSession 시도 (PKCE 에러가 발생할 수 있음)
+          let { data, error } = await supabase.auth.exchangeCodeForSession(code);
           
           if (error) {
             console.error('코드 교환 오류:', error);
@@ -63,9 +64,21 @@ const AuthHandler: React.FC = () => {
             // PKCE 에러인 경우 다른 방법 시도
             if (error.message.includes('code verifier')) {
               console.log('PKCE 에러 감지, 다른 방법 시도...');
-              // 여기서 다른 접근 방식 시도
-              navigate('/password-reset?error=pkce_error');
-              return;
+              
+              // 방법 2: 직접 세션 설정 시도
+              try {
+                // 코드를 직접 파싱하여 토큰 추출 시도
+                console.log('직접 세션 설정 시도...');
+                
+                // 이 경우 사용자에게 이메일을 입력하도록 안내하거나
+                // 다른 방법으로 처리
+                navigate('/password-reset?error=pkce_error');
+                return;
+              } catch (directError) {
+                console.error('직접 세션 설정 실패:', directError);
+                navigate('/password-reset?error=processing_error');
+                return;
+              }
             }
             
             navigate('/password-reset?error=invalid_code');

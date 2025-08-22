@@ -90,6 +90,13 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
    - Supabase 설정의 Site URL과 실제 사용하는 도메인이 정확히 일치해야 함
    - `https://anyfesta.com`과 `https://www.anyfesta.com`은 다른 도메인으로 인식됨
 
+**기타 에러 케이스:**
+
+- **`pkce_error`**: 보안 인증 오류, 비밀번호 재설정을 다시 요청
+- **`email_required`**: 이메일 정보 누락, 비밀번호 재설정을 다시 요청
+- **`no_session`**: 세션 생성 실패, 비밀번호 재설정을 다시 요청
+- **`processing_error`**: 처리 중 오류 발생, 비밀번호 재설정을 다시 요청
+
 ### 개발 서버 실행
 
 ```bash
