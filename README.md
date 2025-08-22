@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# AnyFesta Homepage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AnyFesta 앱의 공식 홈페이지입니다.
 
-## Available Scripts
+## 프로젝트 소개
 
-In the project directory, you can run:
+AnyFesta는 애니메이션과 문화 이벤트를 한 곳에서 만날 수 있는 이벤트 플랫폼입니다.
+이 홈페이지는 앱의 주요 기능을 소개하고, 사용자들에게 필요한 정보를 제공합니다.
 
-### `npm start`
+## 주요 페이지
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **메인 페이지** (`/`): AnyFesta 앱 기능 소개
+- **개인정보 처리방침** (`/privacy`): 개인정보 처리 관련 안내
+- **비밀번호 초기화** (`/password-reset`): 비밀번호 재설정 완료 안내
+- **이메일 인증** (`/email-verification`): 이메일 인증 완료 안내
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 기술 스택
 
-### `npm test`
+- **React 18** with TypeScript
+- **Tailwind CSS** for styling
+- **React Router DOM** for routing
+- **Pretendard** font for Korean typography
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 개발 환경 설정
 
-### `npm run build`
+### 설치
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 개발 서버 실행
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+브라우저에서 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 빌드
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 테스트
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm test
+```
 
-## Learn More
+## 프로젝트 구조
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src/
+├── components/          # 재사용 가능한 컴포넌트
+│   ├── Header.tsx      # 페이지 헤더
+│   └── Footer.tsx      # 페이지 푸터
+├── pages/              # 페이지 컴포넌트
+│   ├── HomePage.tsx    # 메인 페이지
+│   ├── PrivacyPolicyPage.tsx    # 개인정보 처리방침
+│   ├── PasswordResetPage.tsx    # 비밀번호 초기화
+│   └── EmailVerificationPage.tsx # 이메일 인증
+├── App.tsx             # 메인 앱 컴포넌트
+└── index.tsx           # 엔트리 포인트
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 디자인 시스템
+
+### 컬러
+
+- **Primary**: #1A237E (Indigo 900)
+- **Secondary**: #6B7280 (Gray 600)
+
+### 폰트
+
+- **Korean**: Pretendard
+- **Fallback**: system-ui, sans-serif
+
+## 배포
+
+이 프로젝트는 정적 호스팅 서비스(Netlify, Vercel 등)에 배포할 수 있습니다.
+
+## 라이선스
+
+MIT License
