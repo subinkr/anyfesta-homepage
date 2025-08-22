@@ -15,21 +15,57 @@ const AuthHandler: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // URL에서 액세스 토큰과 리프레시 토큰 확인
-    const hashParams = new URLSearchParams(location.hash.substring(1));
-    const accessToken = hashParams.get('access_token');
-    const refreshToken = hashParams.get('refresh_token');
-    const type = hashParams.get('type');
-
-    if (accessToken && refreshToken && type === 'recovery') {
-      // 비밀번호 재설정 토큰이 있는 경우
-      console.log('비밀번호 재설정 토큰 감지됨');
+    const handleAuth = async () => {
+      console.log('AuthHandler 실행됨, 현재 URL:', window.location.href);
+      console.log('Search params:', location.search);
+      console.log('Hash params:', location.hash);
       
-      // 세션 설정
-      supabase.auth.setSession({
-        access_token: accessToken,
-        refresh_token: refreshToken,
-      }).then(({ data, error }) => {
+      // URL에서 code 쿼리 파라미터 확인 (비밀번호 재설정용)
+      const searchParams = new URLSearchParams(location.search);
+      const code = searchParams.get('code');
+      
+      // URL에서 액세스 토큰과 리프레시 토큰 확인 (hash 파라미터)
+      const hashParams = new URLSearchParams(location.hash.substring(1));
+      const accessToken = hashParams.get('access_token');
+      const refreshToken = hashParams.get('refresh_token');
+      const type = hashParams.get('type');
+
+      // 비밀번호 재설정 코드가 있는 경우
+      if (code) {
+        console.log('비밀번호 재설정 코드 감지됨:', code);
+        
+        try {
+          // code를 사용하여 세션 설정
+          const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+          
+          if (error) {
+            console.error('코드 교환 오류:', error);
+            navigate('/password-reset?error=invalid_code');
+            return;
+          }
+
+          if (data.session) {
+            console.log('세션이 설정되었습니다:', data.session);
+            // 비밀번호 재설정 확인 페이지로 이동
+            navigate('/password-reset/confirm');
+          }
+        } catch (error) {
+          console.error('코드 처리 중 오류:', error);
+          navigate('/password-reset?error=processing_error');
+        }
+        return;
+      }
+
+      // 기존 hash 파라미터 처리 (이메일 확인 등)
+      if (accessToken && refreshToken && type === 'recovery') {
+        console.log('비밀번호 재설정 토큰 감지됨');
+        
+        // 세션 설정
+        const { data, error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        });
+        
         if (error) {
           console.error('세션 설정 오류:', error);
           navigate('/password-reset?error=session_error');
@@ -38,8 +74,10 @@ const AuthHandler: React.FC = () => {
           // 비밀번호 재설정 확인 페이지로 이동
           navigate('/password-reset/confirm');
         }
-      });
-    }
+      }
+    };
+
+    handleAuth();
   }, [location, navigate]);
 
   return null;

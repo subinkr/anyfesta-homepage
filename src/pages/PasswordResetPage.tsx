@@ -12,8 +12,22 @@ const PasswordResetPage: React.FC = () => {
   useEffect(() => {
     // URL에서 에러 파라미터 확인
     const error = searchParams.get('error');
-    if (error === 'session_error') {
-      setMessage('비밀번호 재설정 링크가 만료되었거나 유효하지 않습니다. 다시 시도해주세요.');
+    if (error) {
+      let errorMessage = '';
+      switch (error) {
+        case 'session_error':
+          errorMessage = '비밀번호 재설정 링크가 만료되었거나 유효하지 않습니다. 다시 시도해주세요.';
+          break;
+        case 'invalid_code':
+          errorMessage = '비밀번호 재설정 코드가 유효하지 않습니다. 다시 시도해주세요.';
+          break;
+        case 'processing_error':
+          errorMessage = '비밀번호 재설정 처리 중 오류가 발생했습니다. 다시 시도해주세요.';
+          break;
+        default:
+          errorMessage = '비밀번호 재설정 중 오류가 발생했습니다. 다시 시도해주세요.';
+      }
+      setMessage(errorMessage);
       setIsSuccess(false);
     }
   }, [searchParams]);
@@ -31,8 +45,12 @@ const PasswordResetPage: React.FC = () => {
     setMessage('');
 
     try {
+      // 현재 도메인을 기반으로 리다이렉트 URL 설정
+      const redirectUrl = `${window.location.origin}/password-reset/confirm`;
+      console.log('리다이렉트 URL:', redirectUrl);
+      
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/password-reset/confirm`,
+        redirectTo: redirectUrl,
       });
 
       if (error) {
@@ -42,6 +60,7 @@ const PasswordResetPage: React.FC = () => {
       setMessage('비밀번호 재설정 링크가 이메일로 전송되었습니다. 이메일을 확인해주세요.');
       setIsSuccess(true);
     } catch (error: any) {
+      console.error('비밀번호 재설정 오류:', error);
       setMessage(error.message || '비밀번호 재설정 요청 중 오류가 발생했습니다.');
       setIsSuccess(false);
     } finally {

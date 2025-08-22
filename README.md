@@ -44,6 +44,16 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 4. Supabase 프로젝트에서 Authentication > Settings > URL Configuration에서 Site URL을 설정합니다.
 
+#### 비밀번호 재설정 설정
+
+비밀번호 재설정 기능이 제대로 작동하려면 다음 설정이 필요합니다:
+
+1. **Site URL 설정**: Authentication > Settings > URL Configuration에서 Site URL을 `https://www.anyfesta.com`으로 설정
+2. **Redirect URLs 설정**: Additional Redirect URLs에 다음 URL들을 추가:
+   - `https://www.anyfesta.com/password-reset/confirm`
+   - `https://www.anyfesta.com/email-verification`
+3. **Email Templates 설정**: Authentication > Email Templates에서 비밀번호 재설정 이메일 템플릿의 Action URL이 올바르게 설정되어 있는지 확인
+
 ### 개발 서버 실행
 
 ```bash

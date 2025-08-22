@@ -24,7 +24,10 @@ const PasswordResetConfirmPage: React.FC = () => {
       }
 
       // recovery 타입인지 확인 (비밀번호 재설정용)
-      if (session.user.app_metadata?.provider === 'email' && session.user.aud === 'authenticated') {
+      // Supabase에서 비밀번호 재설정으로 생성된 세션은 recovery 타입이 아닐 수 있음
+      // 대신 사용자가 인증된 상태인지만 확인
+      if (session.user && session.user.aud === 'authenticated') {
+        console.log('유효한 세션 확인됨:', session.user);
         setIsValidSession(true);
       } else {
         setMessage('유효하지 않은 링크입니다. 비밀번호 재설정을 다시 요청해주세요.');
