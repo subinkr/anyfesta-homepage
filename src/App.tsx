@@ -35,7 +35,20 @@ const AuthHandler: React.FC = () => {
         console.log('비밀번호 재설정 코드 감지됨:', code);
         
         try {
-          // code를 사용하여 세션 설정
+          // Supabase v2에서 비밀번호 재설정 코드 처리
+          console.log('비밀번호 재설정 코드 처리 시작...');
+          
+          // 먼저 현재 세션 상태 확인
+          const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+          
+          if (sessionError) {
+            console.error('세션 확인 오류:', sessionError);
+            navigate('/password-reset?error=session_error');
+            return;
+          }
+          
+          // Supabase v2.38.0+ 에서는 exchangeCodeForSession 사용
+          // PKCE 플로우를 위해 code_verifier가 필요할 수 있음
           console.log('exchangeCodeForSession 호출 시작...');
           const { data, error } = await supabase.auth.exchangeCodeForSession(code);
           
@@ -46,6 +59,15 @@ const AuthHandler: React.FC = () => {
               status: error.status,
               name: error.name
             });
+            
+            // PKCE 에러인 경우 다른 방법 시도
+            if (error.message.includes('code verifier')) {
+              console.log('PKCE 에러 감지, 다른 방법 시도...');
+              // 여기서 다른 접근 방식 시도
+              navigate('/password-reset?error=pkce_error');
+              return;
+            }
+            
             navigate('/password-reset?error=invalid_code');
             return;
           }

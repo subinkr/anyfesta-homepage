@@ -73,6 +73,23 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
    - `anyfesta.com`과 `www.anyfesta.com` 중 어떤 도메인을 사용하는지 확인
    - Supabase 설정과 일치하는지 확인
 
+**"both auth code and code verifier should be non-empty" 에러가 발생하는 경우:**
+
+이는 Supabase v2의 PKCE (Proof Key for Code Exchange) 보안 기능과 관련된 문제입니다:
+
+1. **Supabase 프로젝트 설정에서 확인**:
+   - Authentication > Settings > URL Configuration
+   - Site URL이 정확히 설정되어 있는지 확인
+   - Redirect URLs에 정확한 경로가 포함되어 있는지 확인
+
+2. **이메일 템플릿 설정 확인**:
+   - Authentication > Email Templates > Password Reset
+   - Action URL이 올바르게 설정되어 있는지 확인
+
+3. **도메인 일치 확인**:
+   - Supabase 설정의 Site URL과 실제 사용하는 도메인이 정확히 일치해야 함
+   - `https://anyfesta.com`과 `https://www.anyfesta.com`은 다른 도메인으로 인식됨
+
 ### 개발 서버 실행
 
 ```bash

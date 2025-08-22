@@ -27,6 +27,9 @@ const PasswordResetPage: React.FC = () => {
         case 'no_session':
           errorMessage = '세션을 생성할 수 없습니다. 비밀번호 재설정을 다시 요청해주세요.';
           break;
+        case 'pkce_error':
+          errorMessage = '보안 인증 오류가 발생했습니다. 비밀번호 재설정을 다시 요청해주세요.';
+          break;
         default:
           errorMessage = '비밀번호 재설정 중 오류가 발생했습니다. 다시 시도해주세요.';
       }
