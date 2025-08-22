@@ -4,6 +4,7 @@
   "private": true,
   "description": "AnyFesta 앱 공식 홈페이지",
   "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",

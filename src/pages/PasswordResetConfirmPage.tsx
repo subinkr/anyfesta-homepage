@@ -1,17 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
-const PasswordResetPage: React.FC = () => {
-  const [email, setEmail] = useState('');
+const PasswordResetConfirmPage: React.FC = () => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
-  const handlePasswordReset = async (e: React.FormEvent) => {
+  useEffect(() => {
+    // URL에서 토큰 확인
+    const token = searchParams.get('token');
+    if (!token) {
+      setMessage('유효하지 않은 링크입니다.');
+      setIsSuccess(false);
+    }
+  }, [searchParams]);
+
+  const handlePasswordUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email) {
-      setMessage('이메일 주소를 입력해주세요.');
+    if (!password || !confirmPassword) {
+      setMessage('모든 필드를 입력해주세요.');
+      setIsSuccess(false);
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setMessage('비밀번호가 일치하지 않습니다.');
+      setIsSuccess(false);
+      return;
+    }
+
+    if (password.length < 6) {
+      setMessage('비밀번호는 최소 6자 이상이어야 합니다.');
       setIsSuccess(false);
       return;
     }
@@ -20,18 +45,18 @@ const PasswordResetPage: React.FC = () => {
     setMessage('');
 
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/password-reset/confirm`,
+      const { error } = await supabase.auth.updateUser({
+        password: password
       });
 
       if (error) {
         throw error;
       }
 
-      setMessage('비밀번호 재설정 링크가 이메일로 전송되었습니다. 이메일을 확인해주세요.');
+      setMessage('비밀번호가 성공적으로 변경되었습니다.');
       setIsSuccess(true);
     } catch (error: any) {
-      setMessage(error.message || '비밀번호 재설정 요청 중 오류가 발생했습니다.');
+      setMessage(error.message || '비밀번호 변경 중 오류가 발생했습니다.');
       setIsSuccess(false);
     } finally {
       setIsLoading(false);
@@ -49,10 +74,10 @@ const PasswordResetPage: React.FC = () => {
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              이메일 전송 완료
+              비밀번호 변경 완료
             </h1>
             <p className="text-gray-600 mb-8">
-              비밀번호 재설정 링크가 이메일로 전송되었습니다.
+              비밀번호가 성공적으로 변경되었습니다.
             </p>
           </div>
 
@@ -65,26 +90,22 @@ const PasswordResetPage: React.FC = () => {
                   </svg>
                   <div className="text-left">
                     <h3 className="text-sm font-medium text-blue-800 mb-1">
-                      다음 단계
+                      보안을 위한 안내
                     </h3>
                     <p className="text-sm text-blue-700">
-                      이메일에 포함된 링크를 클릭하여 새 비밀번호를 설정해주세요.
+                      안전한 비밀번호 사용을 위해 정기적으로 비밀번호를 변경해주세요.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-3">
-                <button
-                  onClick={() => {
-                    setIsSuccess(false);
-                    setEmail('');
-                    setMessage('');
-                  }}
-                  className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                <a 
+                  href="anyfesta://login" 
+                  className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors block text-center"
                 >
-                  다시 시도하기
-                </button>
+                  앱에서 로그인하기
+                </a>
                 <a 
                   href="/" 
                   className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors block text-center"
@@ -105,33 +126,50 @@ const PasswordResetPage: React.FC = () => {
         <div className="text-center">
           <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            비밀번호 재설정
+            새 비밀번호 설정
           </h1>
           <p className="text-gray-600 mb-8">
-            가입한 이메일 주소를 입력하면 비밀번호 재설정 링크를 보내드립니다.
+            새로운 비밀번호를 입력해주세요.
           </p>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-8">
-          <form onSubmit={handlePasswordReset} className="space-y-6">
+          <form onSubmit={handlePasswordUpdate} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                이메일 주소
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                새 비밀번호
               </label>
               <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="new-password"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="example@email.com"
+                placeholder="새 비밀번호를 입력하세요"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                새 비밀번호 확인
+              </label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                autoComplete="new-password"
+                required
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="새 비밀번호를 다시 입력하세요"
               />
             </div>
 
@@ -150,7 +188,7 @@ const PasswordResetPage: React.FC = () => {
               disabled={isLoading}
               className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? '전송 중...' : '비밀번호 재설정 링크 보내기'}
+              {isLoading ? '변경 중...' : '비밀번호 변경하기'}
             </button>
           </form>
 
@@ -163,21 +201,9 @@ const PasswordResetPage: React.FC = () => {
             </a>
           </div>
         </div>
-
-        <div className="text-center">
-          <p className="text-sm text-gray-600">
-            문제가 지속되시나요?{' '}
-            <a 
-              href="mailto:support@anyfesta.app" 
-              className="text-primary hover:text-primary/80 font-medium"
-            >
-              고객지원 문의하기
-            </a>
-          </p>
-        </div>
       </div>
     </div>
   );
 };
 
-export default PasswordResetPage;
+export default PasswordResetConfirmPage;

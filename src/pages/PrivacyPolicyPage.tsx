@@ -9,7 +9,7 @@ const PrivacyPolicyPage: React.FC = () => {
             개인정보 처리방침
           </h1>
           <p className="text-gray-600">
-            최종 업데이트: 2024년 12월 28일
+            최종 업데이트: 2025년 8월 23일
           </p>
         </div>
 
@@ -151,7 +151,7 @@ const PrivacyPolicyPage: React.FC = () => {
 
           <div className="border-t border-gray-200 pt-8">
             <p className="text-center text-gray-600">
-              본 방침은 2024년 12월 28일부터 시행됩니다.
+              본 방침은 2025년 8월 23일부터 시행됩니다.
             </p>
           </div>
         </div>

@@ -73,12 +73,6 @@ const EmailVerificationPage: React.FC = () => {
 
             <div className="space-y-3">
               <a 
-                href="anyfesta://login" 
-                className="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors block text-center"
-              >
-                앱에서 시작하기
-              </a>
-              <a 
                 href="/" 
                 className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors block text-center"
               >

@@ -17,14 +17,6 @@ const Header: React.FC = () => {
             <Link to="/privacy" className="text-gray-700 hover:text-primary transition-colors">
               개인정보처리방침
             </Link>
-            <a 
-              href="https://apps.apple.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              앱 다운로드
-            </a>
           </nav>
           
           {/* 모바일 메뉴 버튼 */}

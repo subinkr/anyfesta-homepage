@@ -142,9 +142,6 @@ const HomePage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               이렇게 간단해요
             </h2>
-            <p className="text-xl text-gray-600">
-              3단계로 이벤트를 만들고 참여하세요
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -154,8 +151,7 @@ const HomePage: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">회원가입</h3>
               <p className="text-gray-600">
-                이메일로 간단하게 회원가입하고 
-                이메일 인증을 완료하세요
+                이메일 인증으로 간단하게 회원가입하세요
               </p>
             </div>
 
@@ -165,8 +161,7 @@ const HomePage: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">이벤트 탐색 및 공유</h3>
               <p className="text-gray-600">
-                이벤트를 찾아보거나 
-                새로운 이벤트를 등록해 공유해보세요
+                이벤트를 찾아보거나 새로운 이벤트를 등록해보세요
               </p>
             </div>
 

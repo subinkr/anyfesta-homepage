@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 AnyFesta. All rights reserved.
+            © 2025 AnyFesta. All rights reserved.
           </p>
         </div>
       </div>
