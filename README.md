@@ -44,59 +44,6 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 4. Supabase 프로젝트에서 Authentication > Settings > URL Configuration에서 Site URL을 설정합니다.
 
-#### 비밀번호 재설정 설정
-
-비밀번호 재설정 기능이 제대로 작동하려면 다음 설정이 필요합니다:
-
-1. **Site URL 설정**: Authentication > Settings > URL Configuration에서 Site URL을 `https://www.anyfesta.com`으로 설정
-2. **Redirect URLs 설정**: Additional Redirect URLs에 다음 URL들을 추가:
-   - `https://www.anyfesta.com/password-reset/confirm`
-   - `https://www.anyfesta.com/email-verification`
-3. **Email Templates 설정**: Authentication > Email Templates에서 비밀번호 재설정 이메일 템플릿의 Action URL이 올바르게 설정되어 있는지 확인
-
-#### 문제 해결
-
-**"비밀번호 재설정 코드가 유효하지 않습니다" 에러가 발생하는 경우:**
-
-1. **Supabase 프로젝트 설정 확인**:
-   - Site URL이 `https://anyfesta.com`으로 정확히 설정되어 있는지 확인
-   - Redirect URLs에 `/password-reset/confirm` 경로가 포함되어 있는지 확인
-
-2. **브라우저 개발자 도구 확인**:
-   - Console 탭에서 에러 메시지 확인
-   - Network 탭에서 Supabase API 호출 상태 확인
-
-3. **환경 변수 확인**:
-   - `.env` 파일에 올바른 Supabase URL과 API 키가 설정되어 있는지 확인
-
-4. **도메인 설정 확인**:
-   - `anyfesta.com`과 `www.anyfesta.com` 중 어떤 도메인을 사용하는지 확인
-   - Supabase 설정과 일치하는지 확인
-
-**"both auth code and code verifier should be non-empty" 에러가 발생하는 경우:**
-
-이는 Supabase v2의 PKCE (Proof Key for Code Exchange) 보안 기능과 관련된 문제입니다:
-
-1. **Supabase 프로젝트 설정에서 확인**:
-   - Authentication > Settings > URL Configuration
-   - Site URL이 정확히 설정되어 있는지 확인
-   - Redirect URLs에 정확한 경로가 포함되어 있는지 확인
-
-2. **이메일 템플릿 설정 확인**:
-   - Authentication > Email Templates > Password Reset
-   - Action URL이 올바르게 설정되어 있는지 확인
-
-3. **도메인 일치 확인**:
-   - Supabase 설정의 Site URL과 실제 사용하는 도메인이 정확히 일치해야 함
-   - `https://anyfesta.com`과 `https://www.anyfesta.com`은 다른 도메인으로 인식됨
-
-**기타 에러 케이스:**
-
-- **`pkce_error`**: 보안 인증 오류, 비밀번호 재설정을 다시 요청
-- **`email_required`**: 이메일 정보 누락, 비밀번호 재설정을 다시 요청
-- **`no_session`**: 세션 생성 실패, 비밀번호 재설정을 다시 요청
-- **`processing_error`**: 처리 중 오류 발생, 비밀번호 재설정을 다시 요청
-
 ### 개발 서버 실행
 
 ```bash
