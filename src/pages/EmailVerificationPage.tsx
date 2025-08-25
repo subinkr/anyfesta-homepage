@@ -82,31 +82,11 @@ const EmailVerificationPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center">
-          <p className="text-sm text-gray-600">
-            앱 다운로드가 필요하신가요?{' '}
-            <a 
-              href="https://apps.apple.com" 
-              className="text-primary hover:text-primary/80 font-medium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              App Store
-            </a>
-            {' '}또는{' '}
-            <a 
-              href="https://play.google.com" 
-              className="text-primary hover:text-primary/80 font-medium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Google Play
-            </a>
-          </p>
-        </div>
+
       </div>
     </div>
   );
 };
 
 export default EmailVerificationPage;
+
