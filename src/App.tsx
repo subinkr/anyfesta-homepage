@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 import { supabase } from './lib/supabase';
 import HomePage from './pages/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 import PasswordResetPage from './pages/PasswordResetPage';
 import PasswordResetConfirmPage from './pages/PasswordResetConfirmPage';
 import EmailVerificationPage from './pages/EmailVerificationPage';
@@ -55,6 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsOfServicePage />} />
             <Route path="/password-reset" element={<PasswordResetPage />} />
             <Route path="/password-reset/confirm" element={<PasswordResetConfirmPage />} />
             <Route path="/email-verification" element={<EmailVerificationPage />} />

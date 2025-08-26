@@ -40,6 +40,11 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">정보</h3>
             <ul className="space-y-2">
               <li>
+                <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
+                  이용약관
+                </Link>
+              </li>
+              <li>
                 <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
                   개인정보처리방침
                 </Link>

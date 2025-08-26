@@ -14,6 +14,9 @@ const Header: React.FC = () => {
             <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
               홈
             </Link>
+            <Link to="/terms" className="text-gray-700 hover:text-primary transition-colors">
+              이용약관
+            </Link>
             <Link to="/privacy" className="text-gray-700 hover:text-primary transition-colors">
               개인정보처리방침
             </Link>
