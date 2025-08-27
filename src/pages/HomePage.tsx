@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
                 App Store에서 다운로드
               </a>
                           <a 
-              href="https://play.google.com/apps/internaltest/4700832596480305863" 
+              href="https://play.google.com/apps/testing/com.anyfesta.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
@@ -194,7 +194,7 @@ const HomePage: React.FC = () => {
               App Store에서 다운로드
             </a>
             <a 
-              href="https://play.google.com/apps/internaltest/4700832596480305863" 
+              href="https://play.google.com/apps/testing/com.anyfesta.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
