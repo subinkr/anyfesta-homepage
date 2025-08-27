@@ -24,12 +24,14 @@ const HomePage: React.FC = () => {
               >
                 App Store에서 다운로드
               </a>
-              <button 
-                disabled
-                className="border border-gray-300 text-gray-400 px-8 py-4 rounded-lg text-lg font-semibold cursor-not-allowed bg-gray-100"
-              >
-                안드로이드 앱 테스트중
-              </button>
+                          <a 
+              href="https://play.google.com/apps/internaltest/4700832596480305863" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              안드로이드 앱 테스트 참여
+            </a>
             </div>
           </div>
         </div>
@@ -191,12 +193,14 @@ const HomePage: React.FC = () => {
             >
               App Store에서 다운로드
             </a>
-            <button 
-              disabled
-              className="border border-white/30 text-white/50 px-8 py-4 rounded-lg text-lg font-semibold cursor-not-allowed bg-white/10"
+            <a 
+              href="https://play.google.com/apps/internaltest/4700832596480305863" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              안드로이드 앱 테스트중
-            </button>
+              안드로이드 앱 테스트 참여
+            </a>
           </div>
         </div>
       </section>
