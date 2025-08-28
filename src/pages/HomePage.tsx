@@ -15,23 +15,33 @@ const HomePage: React.FC = () => {
               콜라보 카페, 극장판 개봉, 라이브 행사 등 <br />
               원하는 이벤트를 쉽게 찾고 참여하세요
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://apps.apple.com/app/any-festa/id6751448187" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                App Store에서 다운로드
-              </a>
-                          <a 
-              href="https://forms.gle/iN5Buh5akTWg95LbA" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
-            >
-              안드로이드 앱 테스트 참여
-            </a>
+            <div className="flex flex-col gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a 
+                  href="https://apps.apple.com/app/any-festa/id6751448187" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors"
+                >
+                  App Store에서 다운로드
+                </a>
+                <a 
+                  href="https://app.anyfesta.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  웹 버전 보기
+                </a>
+                <a 
+                  href="https://forms.gle/iN5Buh5akTWg95LbA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  안드로이드 앱 테스트 참여
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -184,23 +194,33 @@ const HomePage: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             지금 바로 시작해보세요
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://apps.apple.com/app/any-festa/id6751448187" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              App Store에서 다운로드
-            </a>
-            <a 
-              href="https://forms.gle/iN5Buh5akTWg95LbA" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
-            >
-              안드로이드 앱 테스트 참여
-            </a>
+          <div className="flex flex-col gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="https://apps.apple.com/app/any-festa/id6751448187" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
+                App Store에서 다운로드
+              </a>
+              <a 
+                href="https://app.anyfesta.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
+              >
+                웹 버전 보기
+              </a>
+              <a 
+                href="https://forms.gle/iN5Buh5akTWg95LbA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
+                안드로이드 앱 테스트 참여
+              </a>
+            </div>
           </div>
         </div>
       </section>
