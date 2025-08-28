@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { supabase } from './lib/supabase';
 import HomePage from './pages/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -63,6 +64,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
