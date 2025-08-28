@@ -1,3 +1,13 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# 애니페스타, 오타쿠 행사, 서브컬처 이벤트, 애니메이션, 만화, 라이브, 코스프레, 팝업, 콜라보, 극장판 관련 콘텐츠
+Allow: /privacy
+Allow: /terms
+
+# 사이트맵
+Sitemap: https://anyfesta.com/sitemap.xml
+
+# 크롤링 지연
+Crawl-delay: 1
