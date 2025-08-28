@@ -8,12 +8,12 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              애니페스타와 오타쿠 행사를 <br />
+              오타쿠 행사를 <br />
               <span className="text-primary">AnyFesta</span>에서 만나보세요
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              애니페스타, 애니메이션 극장판 개봉, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, <br />
-              콜라보 카페 등 다양한 애니페스타와 오타쿠 문화 행사를 쉽게 찾고 참여하세요
+              애니메이션 극장판 개봉, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, <br />
+              콜라보 카페 등 다양한 오타쿠 문화 행사를 쉽게 찾고 참여하세요
             </p>
             <div className="flex flex-col gap-4 justify-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              애니페스타와 오타쿠 문화를 위한 AnyFesta의 주요 기능
+              오타쿠 문화를 위한 AnyFesta의 주요 기능
             </h2>
           </div>
 
@@ -64,10 +64,10 @@ const HomePage: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니페스타 & 애니메이션 이벤트</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니메이션 이벤트</h3>
               <p className="text-gray-600">
-                애니페스타, 극장판 개봉, 애니메이션 축제, 만화 전시회, 라이브 이벤트 등 
-                다양한 애니페스타와 오타쿠 문화 행사를 관리할 수 있습니다.
+                애니 극장판 개봉, 애니메이션 축제, 만화 전시회, 라이브 이벤트 등 
+                다양한 오타쿠 문화 행사를 관리할 수 있습니다.
               </p>
             </div>
 
@@ -78,10 +78,10 @@ const HomePage: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니페스타 & 서브컬처 카테고리</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">서브컬처 카테고리</h3>
               <p className="text-gray-600">
-                애니페스타, 애니메이션, 만화, 음악, 코스프레, 팝업스토어, 콜라보 이벤트 등 
-                애니페스타와 오타쿠 문화 카테고리로 원하는 행사를 쉽게 찾을 수 있습니다.
+                애니메이션, 만화, 음악, 코스프레, 팝업스토어, 콜라보 이벤트 등 
+                오타쿠 문화 카테고리로 원하는 행사를 쉽게 찾을 수 있습니다.
               </p>
             </div>
 
@@ -107,10 +107,10 @@ const HomePage: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니페스타 & 오타쿠 이벤트 공유</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">오타쿠 이벤트 공유</h3>
               <p className="text-gray-600">
-                애니페스타, 라이브 콘서트, 코스프레 대회, 팝업 이벤트, 극장판 시사회 등 
-                애니페스타와 오타쿠 행사를 생성하면 자동으로 공개되어 다른 팬들이 쉽게 찾고 참여할 수 있습니다.
+                라이브 콘서트, 코스프레 대회, 팝업 이벤트, 극장판 시사회 등 
+                오타쿠 행사를 생성하면 자동으로 공개되어 다른 팬들이 쉽게 찾고 참여할 수 있습니다.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              애니페스타와 오타쿠 문화 이벤트 참여 방법
+              오타쿠 문화 이벤트 참여 방법
             </h2>
           </div>
 
@@ -169,10 +169,10 @@ const HomePage: React.FC = () => {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니페스타 & 이벤트 탐색</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">이벤트 탐색</h3>
               <p className="text-gray-600">
-                애니페스타, 애니메이션 극장판, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, 
-                콜라보 카페 등 애니페스타와 오타쿠 행사를 찾아보거나 새로운 이벤트를 등록해보세요
+                애니메이션 극장판, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, 
+                콜라보 카페 등 오타쿠 행사를 찾아보거나 새로운 이벤트를 등록해보세요
               </p>
             </div>
 
@@ -193,7 +193,7 @@ const HomePage: React.FC = () => {
       <section className="bg-primary py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            애니페스타와 오타쿠 문화의 새로운 경험을 시작해보세요
+            오타쿠 문화의 새로운 경험을 시작해보세요
           </h2>
           <div className="flex flex-col gap-4 justify-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
