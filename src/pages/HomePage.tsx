@@ -4,43 +4,91 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/5 to-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-purple-700 via-purple-600 to-purple-500 py-20 relative overflow-hidden">
+        {/* 배경 애니메이션 효과 */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+        <div className="absolute top-32 right-20 w-16 h-16 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-2000"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              오타쿠 행사를 <br />
-              <span className="text-primary">AnyFesta</span>에서 만나보세요
+            <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+              <span className="text-white text-sm font-medium">오타쿠 이벤트 캘린더</span>
+            </div>
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              오타쿠 이벤트를<br />
+              <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+                한 곳에서
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              애니메이션 극장판 개봉, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, <br />
-              콜라보 카페 등 다양한 오타쿠 문화 행사를 쉽게 찾고 참여하세요
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+              🎭 코스프레 이벤트 • 🎵 오타쿠 라이브 공연 • 🍰 콜라보 카페 • 🛍️ 팝업스토어<br />
+              <span className="font-semibold">모든 오타쿠 행사를 한 곳에서!</span>
             </p>
-            <div className="flex flex-col gap-4 justify-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            
+            {/* 실시간 통계 */}
+            <div className="flex flex-wrap justify-center gap-8 mb-10">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">150+</div>
+                <div className="text-white/80 text-sm">진행중인 이벤트</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">20+</div>
+                <div className="text-white/80 text-sm">활성 사용자</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">실시간</div>
+                <div className="text-white/80 text-sm">채팅 기능</div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a 
                   href="https://apps.apple.com/app/any-festa/id6751448187" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors"
+                  className="bg-white text-purple-700 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
                 >
-                  App Store에서 다운로드
+                  <span className="text-3xl">📱</span>
+                  <div className="text-left">
+                    <div className="text-sm text-gray-500">Download on the</div>
+                    <div className="text-xl font-bold">App Store</div>
+                  </div>
                 </a>
+                
                 <a 
                   href="https://app.anyfesta.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
+                  className="border-2 border-white/50 text-white px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center gap-3"
                 >
-                  웹 버전 보기
+                  <span className="text-3xl">🌐</span>
+                  <div className="text-left">
+                    <div className="text-sm text-white/70">Try the</div>
+                    <div className="text-xl font-bold">Web Version</div>
+                  </div>
                 </a>
-                <a 
-                  href="https://forms.gle/iN5Buh5akTWg95LbA" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
-                >
-                  안드로이드 앱 테스트 참여
-                </a>
+
+
+                <div className="relative">
+                  <a 
+                    href="https://forms.gle/8jhETDrhu7mFH6du6" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
+                  >
+                    <span className="text-3xl">🤖</span>
+                    <div className="text-left">
+                      <div className="text-sm text-gray-500">안드로이드 앱</div>
+                      <div className="text-xl font-bold">테스터 신청</div>
+                    </div>
+                  </a>
+                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
+                    9월 15일 이전 출시 예정
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -48,179 +96,435 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              오타쿠 문화를 위한 AnyFesta의 주요 기능
+            <div className="inline-flex items-center bg-purple-100 text-purple-800 rounded-full px-4 py-2 text-sm font-medium mb-4">
+              주요 기능
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-purple-700 to-purple-600 bg-clip-text text-transparent">AnyFesta</span>의 주요 기능
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              오타쿠 이벤트를 쉽게 찾고 참여할 수 있는 기능들입니다.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* 이벤트 관리 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+            {/* 실시간 채팅 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">💬</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">애니메이션 이벤트</h3>
-              <p className="text-gray-600">
-                애니 극장판 개봉, 애니메이션 축제, 만화 전시회, 라이브 이벤트 등 
-                다양한 오타쿠 문화 행사를 관리할 수 있습니다.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">실시간 채팅</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-green-600">관심 이벤트 등록 = 자동 채팅방 입장!</span><br/>
+                애니메이션 극장판, 오타쿠 라이브 공연, 코스프레 이벤트 등에서 
+                같은 취향의 친구들과 실시간으로 소통하세요.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                실시간 메시지 • 참여자 목록 • 관리자 기능
+              </div>
             </div>
 
-            {/* 카테고리 시스템 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                </svg>
+            {/* 개인 맞춤 캘린더 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📅</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">서브컬처 카테고리</h3>
-              <p className="text-gray-600">
-                애니메이션, 만화, 음악, 코스프레, 팝업스토어, 콜라보 이벤트 등 
-                오타쿠 문화 카테고리로 원하는 행사를 쉽게 찾을 수 있습니다.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">개인 맞춤 캘린더</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-purple-600">관심 카테고리 설정으로 완벽한 맞춤!</span><br/>
+                애니메이션, 음악, 코스프레 등 관심 분야만 골라서 보세요. 
+                개인 일정과 이벤트를 한 번에 관리할 수 있습니다.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                관심 카테고리 • 개인 일정
+              </div>
             </div>
 
-            {/* 위치 정보 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            {/* 오타쿠 전용 카테고리 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🎌</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">위치 정보</h3>
-              <p className="text-gray-600">
-                Google Maps API를 통한 정확한 위치 검색과 설정으로 
-                이벤트 장소를 쉽게 확인할 수 있습니다.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">오타쿠 전용 카테고리</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-orange-600">오타쿠만을 위한 특별한 분류!</span><br/>
+                애니메이션 극장판, 오타쿠 라이브 공연, 코스프레 이벤트, 팝업스토어, 
+                콜라보 카페 등 오타쿠 문화에 특화된 카테고리로 쉽게 찾아보세요.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+                애니메이션 • 음악 • 코스프레 • 팝업스토어
+              </div>
             </div>
 
-            {/* 이벤트 공유 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-                </svg>
+            {/* 위치 기반 검색 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📍</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">오타쿠 이벤트 공유</h3>
-              <p className="text-gray-600">
-                라이브 콘서트, 코스프레 대회, 팝업 이벤트, 극장판 시사회 등 
-                오타쿠 행사를 생성하면 자동으로 공개되어 다른 팬들이 쉽게 찾고 참여할 수 있습니다.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">스마트 위치 검색</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-blue-600">Google Maps 연동으로 정확한 위치!</span><br/>
+                홍대, 강남, 신촌 등 오타쿠 명소 근처의 이벤트를 쉽게 찾고, 
+                정확한 위치 정보로 길 잃지 마세요.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                Google Maps • 근처 이벤트 • 길찾기 연동
+              </div>
             </div>
 
-            {/* 사용자 인증 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+            {/* 티켓팅 정보 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🎫</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">안전한 인증</h3>
-              <p className="text-gray-600">
-                Supabase 기반 이메일 인증으로 
-                안전하고 신뢰할 수 있는 서비스를 제공합니다.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">티켓팅 정보 관리</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-yellow-600">티켓팅 놓치지 마세요!</span><br/>
+                애니메이션 극장판, 오타쿠 라이브 공연, 라이브 이벤트의 
+                티켓팅 시작일과 종료일을 한눈에 확인하고 놓치지 마세요.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                티켓팅 알림 • 시작/종료일 • 예매 링크
+              </div>
             </div>
 
-            {/* 반응형 UI */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
+            {/* 크로스 플랫폼 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📱</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">모던 UI</h3>
-              <p className="text-gray-600">
-                Material Design 3 기반의 깔끔하고 직관적인 
-                사용자 인터페이스를 경험해보세요.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">어디서나 접속</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-indigo-600">iOS, Android, 웹 모두 지원!</span><br/>
+                집에서는 웹으로, 밖에서는 앱으로. 
+                어떤 기기에서든 동일한 경험을 제공합니다.
               </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                iOS 앱 • Android 앱 • 웹 버전
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gradient-to-br from-gray-50 to-purple-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              오타쿠 문화 이벤트 참여 방법
+            <div className="inline-flex items-center bg-purple-100 text-purple-800 rounded-full px-4 py-2 text-sm font-medium mb-4">
+              사용 방법
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-purple-700 to-purple-600 bg-clip-text text-transparent">AnyFesta</span> 사용법
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              간단한 3단계로 오타쿠 이벤트에 참여하세요.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">1</span>
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-white text-3xl font-bold">1</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-xs">✨</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">회원가입</h3>
-              <p className="text-gray-600">
-                이메일 인증으로 간단하게 회원가입하세요
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">간편 회원가입</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-purple-600">이메일만으로 30초 완료!</span><br/>
+                복잡한 절차 없이 이메일 인증만으로 
+                오타쿠 문화의 모든 이벤트에 참여할 수 있습니다.
               </p>
+              <div className="mt-4 text-sm text-gray-500">
+                📧 이메일 인증 • 🔒 안전한 보안 • ⚡ 빠른 가입
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">2</span>
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-white text-3xl font-bold">2</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+                  <span className="text-xs">🎯</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">이벤트 탐색</h3>
-              <p className="text-gray-600">
-                애니메이션 극장판, 라이브 콘서트, 코스프레 이벤트, 팝업스토어, 
-                콜라보 카페 등 오타쿠 행사를 찾아보거나 새로운 이벤트를 등록해보세요
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">관심 분야 설정</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-blue-600">나만의 오타쿠 프로필 완성!</span><br/>
+                애니메이션, 아이돌, 코스프레, 팝업스토어 등 
+                관심 있는 분야를 선택하면 맞춤형 이벤트를 추천해드립니다.
               </p>
+              <div className="mt-4 text-sm text-gray-500">
+                🎌 애니메이션 • 🎵 음악 • 👗 코스프레 • 🛍️ 팝업스토어
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">3</span>
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-white text-3xl font-bold">3</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-400 rounded-full flex items-center justify-center">
+                  <span className="text-xs">💬</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">참여</h3>
-              <p className="text-gray-600">
-                관심있는 이벤트에 참여하세요
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">관심 이벤트 등록 & 채팅</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-green-600">관심 등록 하나로 모든 게 시작!</span><br/>
+                관심 있는 이벤트를 등록하면 자동으로 채팅방에 입장되어 
+                같은 취향의 친구들과 실시간으로 소통할 수 있습니다.
+              </p>
+              <div className="mt-4 text-sm text-gray-500">
+                🎫 관심 이벤트 등록 • 💬 자동 채팅방 • 👥 친구 만들기
+              </div>
+            </div>
+          </div>
+
+          {/* 추가 정보 */}
+          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                🎉 이제 오타쿠 이벤트에 참여하세요!
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
+                AnyFesta에서 <span className="font-semibold text-purple-600">애니메이션 극장판</span>, 
+                <span className="font-semibold text-pink-600"> 오타쿠 라이브 공연</span>, 
+                <span className="font-semibold text-blue-600"> 코스프레 이벤트</span> 등 
+                다양한 오타쿠 이벤트를 찾아보세요. 
+                같은 취향의 친구들과 함께 즐거운 시간을 보내세요!
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* 오타쿠 문화 하이라이트 섹션 */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-purple-100 text-purple-800 rounded-full px-4 py-2 text-sm font-medium mb-4">
+              이벤트 카테고리
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-purple-700 to-purple-600 bg-clip-text text-transparent">AnyFesta</span>에서 찾는<br/>
+              오타쿠 이벤트들
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              다양한 오타쿠 이벤트를 카테고리별로 쉽게 찾을 수 있습니다.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* 애니메이션 */}
+            <div className="group bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl hover:shadow-xl transition-all transform hover:-translate-y-2 border border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🎬</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">애니메이션</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                극장판 개봉, 시사회, 애니메이션 축제, 만화 전시회 등 
+                모든 애니메이션 관련 이벤트를 한 곳에서!
+              </p>
+              <div className="mt-4 text-xs text-blue-600 font-medium">
+                극장판 • 시사회 • 축제 • 전시회
+              </div>
+            </div>
+
+            {/* 음악/아이돌 */}
+            <div className="group bg-gradient-to-br from-pink-50 to-rose-100 p-8 rounded-2xl hover:shadow-xl transition-all transform hover:-translate-y-2 border border-pink-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🎵</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">음악 & 아이돌</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                오타쿠 라이브 공연, 라이브 이벤트, 팬미팅, 앨범 발매 이벤트 등 
+                음악과 아이돌 관련 모든 행사!
+              </p>
+              <div className="mt-4 text-xs text-pink-600 font-medium">
+                콘서트 • 라이브 • 팬미팅 • 발매이벤트
+              </div>
+            </div>
+
+            {/* 코스프레 */}
+            <div className="group bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-2xl hover:shadow-xl transition-all transform hover:-translate-y-2 border border-purple-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">👗</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">코스프레</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                코스프레 이벤트, 포토세션, 워크샵, 의상 제작 클래스 등 
+                코스프레 문화의 모든 것을 경험하세요!
+              </p>
+              <div className="mt-4 text-xs text-purple-600 font-medium">
+                대회 • 포토세션 • 워크샵 • 클래스
+              </div>
+            </div>
+
+            {/* 팝업스토어 */}
+            <div className="group bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-xl transition-all transform hover:-translate-y-2 border border-orange-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">🛍️</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">팝업스토어</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                한정판 굿즈, 콜라보 상품, 팝업 카페, 특별 전시 등 
+                오타쿠를 위한 특별한 쇼핑 경험!
+              </p>
+              <div className="mt-4 text-xs text-orange-600 font-medium">
+                굿즈 • 콜라보 • 팝업카페 • 전시
+              </div>
+            </div>
+          </div>
+
+          {/* 실시간 채팅 하이라이트 */}
+          <div className="mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-12 border border-green-200">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">💬</span>
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">실시간 채팅</span>으로<br/>
+                같은 취향 친구들과 만나세요!
+              </h3>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+                관심 이벤트로 등록하면 <span className="font-semibold text-green-600">자동으로 채팅방에 입장</span>됩니다!<br/>
+                애니메이션 극장판에서 만난 친구들과 영화 후기를 나누고,<br/>
+                오타쿠 라이브 공연에서 만난 팬들과 함께 음악을 즐기고,<br/>
+                코스프레 이벤트에서 만난 코스어들과 의상 정보를 공유하세요!
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-green-200">
+                  <div className="text-2xl mb-3">🎬</div>
+                  <div className="font-semibold text-gray-900 mb-2">영화 후기 공유</div>
+                  <div className="text-sm text-gray-600">극장판 관람 후 같은 취향 친구들과 감상평 나누기</div>
+                </div>
+                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-green-200">
+                  <div className="text-2xl mb-3">🎵</div>
+                  <div className="font-semibold text-gray-900 mb-2">라이브 공연 즐기기</div>
+                  <div className="text-sm text-gray-600">오타쿠 라이브 공연에서 팬들과 함께 음악을 듣고 즐기기</div>
+                </div>
+                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-green-200">
+                  <div className="text-2xl mb-3">👗</div>
+                  <div className="font-semibold text-gray-900 mb-2">코스프레 정보</div>
+                  <div className="text-sm text-gray-600">의상 정보, 사진 촬영 장소 공유하기</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="bg-primary py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            오타쿠 문화의 새로운 경험을 시작해보세요
+      <section className="bg-gradient-to-br from-purple-700 via-purple-600 to-purple-500 py-20 relative overflow-hidden">
+        {/* 배경 효과 */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/5 rounded-full animate-pulse delay-2000"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+            <span className="text-white text-lg font-medium">지금 바로 시작하세요!</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            다양한 오타쿠 이벤트를<br/>
+            <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+              지금 찾아보세요
+            </span>
           </h2>
-          <div className="flex flex-col gap-4 justify-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+            애니메이션 극장판, 오타쿠 라이브 공연, 코스프레 이벤트, 팝업스토어...<br/>
+            <span className="font-semibold">다양한 오타쿠 이벤트를 한 곳에서!</span>
+          </p>
+          
+          {/* 다운로드 버튼들 */}
+          <div className="flex flex-col gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a 
                 href="https://apps.apple.com/app/any-festa/id6751448187" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+                  className="bg-white text-purple-700 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
               >
-                App Store에서 다운로드
+                <span className="text-3xl">📱</span>
+                <div className="text-left">
+                  <div className="text-sm text-gray-500">Download on the</div>
+                  <div className="text-xl font-bold">App Store</div>
+                </div>
               </a>
+              
               <a 
                 href="https://app.anyfesta.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
+                className="border-2 border-white/50 text-white px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center gap-3"
               >
-                웹 버전 보기
+                <span className="text-3xl">🌐</span>
+                <div className="text-left">
+                  <div className="text-sm text-white/70">Try the</div>
+                  <div className="text-xl font-bold">Web Version</div>
+                </div>
               </a>
-              <a 
-                href="https://forms.gle/iN5Buh5akTWg95LbA" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                안드로이드 앱 테스트 참여
-              </a>
+
+
+              <div className="relative">
+                <a 
+                  href="https://forms.gle/8jhETDrhu7mFH6du6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
+                >
+                  <span className="text-3xl">🤖</span>
+                  <div className="text-left">
+                    <div className="text-sm text-gray-500">안드로이드 앱</div>
+                    <div className="text-xl font-bold">테스터 신청</div>
+                  </div>
+                </a>
+                <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
+                  9월 15일 이전 출시 예정
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* 추가 정보 */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-white/80">
+            <div className="text-center">
+              <div className="text-3xl mb-2">⚡</div>
+              <div className="font-semibold text-lg mb-1">빠른 시작</div>
+              <div className="text-sm">30초 만에 회원가입 완료</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🔒</div>
+              <div className="font-semibold text-lg mb-1">안전한 보안</div>
+              <div className="text-sm">Supabase 기반 안전한 인증</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">💬</div>
+              <div className="font-semibold text-lg mb-1">실시간 채팅</div>
+              <div className="text-sm">같은 취향 친구들과 소통</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">📱</div>
+              <div className="font-semibold text-lg mb-1">크로스 플랫폼</div>
+              <div className="text-sm">iOS • Android • 웹 모두 지원</div>
             </div>
           </div>
         </div>
