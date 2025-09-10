@@ -303,7 +303,7 @@ const HomePage: React.FC = () => {
                 AnyFesta에서 <span className="font-semibold text-purple-600">애니메이션 극장판</span>, 
                 <span className="font-semibold text-pink-600"> 오타쿠 라이브 공연</span>, 
                 <span className="font-semibold text-blue-600"> 코스프레 이벤트</span> 등 
-                다양한 오타쿠 이벤트를 찾아보세요. 
+                다양한 오타쿠 이벤트를 찾아보세요. <br></br>
                 같은 취향의 친구들과 함께 즐거운 시간을 보내세요!
               </p>
             </div>
