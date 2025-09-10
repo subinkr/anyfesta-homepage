@@ -264,7 +264,7 @@ const HomePage: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">관심 분야 설정</h3>
               <p className="text-gray-600 leading-relaxed">
                 <span className="font-semibold text-blue-600">나만의 오타쿠 프로필 완성!</span><br/>
-                애니메이션, 아이돌, 코스프레, 팝업스토어 등 
+                애니메이션, 오타쿠 라이브 공연, 코스프레, 팝업스토어 등 
                 관심 있는 분야를 선택하면 맞춤형 이벤트를 추천해드립니다.
               </p>
               <div className="mt-4 text-sm text-gray-500">
@@ -348,10 +348,10 @@ const HomePage: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-3xl">🎵</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">음악 & 아이돌</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">오타쿠 라이브 공연</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 오타쿠 라이브 공연, 라이브 이벤트, 팬미팅, 앨범 발매 이벤트 등 
-                음악과 아이돌 관련 모든 행사!
+                음악 관련 모든 행사!
               </p>
               <div className="mt-4 text-xs text-pink-600 font-medium">
                 콘서트 • 라이브 • 팬미팅 • 발매이벤트
