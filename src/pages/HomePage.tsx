@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">150+</div>
-                <div className="text-white/80 text-sm">진행중인 이벤트</div>
+                <div className="text-white/80 text-sm">등록된 이벤트</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">30+</div>
