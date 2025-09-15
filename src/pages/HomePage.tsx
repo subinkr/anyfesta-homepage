@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
                     </div>
                   </a>
                   <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
-                    9월 15일 이전 출시 예정
+                    9월 20일 이전 출시 예정
                   </div>
                 </div>
               </div>
@@ -498,7 +498,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </a>
                 <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
-                  9월 15일 이전 출시 예정
+                  9월 20일 이전 출시 예정
                 </div>
               </div>
             </div>
