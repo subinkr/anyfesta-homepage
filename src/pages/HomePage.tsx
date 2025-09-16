@@ -72,23 +72,18 @@ const HomePage: React.FC = () => {
                 </a>
 
 
-                <div className="relative">
-                  <a 
-                    href="https://forms.gle/8jhETDrhu7mFH6du6" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
-                  >
-                    <span className="text-3xl">🤖</span>
-                    <div className="text-left">
-                      <div className="text-sm text-gray-500">안드로이드 앱</div>
-                      <div className="text-xl font-bold">테스터 신청</div>
-                    </div>
-                  </a>
-                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
-                    9월 20일 이전 출시 예정
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.anyfesta.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
+                >
+                  <span className="text-3xl">🤖</span>
+                  <div className="text-left">
+                    <div className="text-sm text-gray-500">GET IT ON</div>
+                    <div className="text-xl font-bold">Google Play</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -484,23 +479,18 @@ const HomePage: React.FC = () => {
               </a>
 
 
-              <div className="relative">
-                <a 
-                  href="https://forms.gle/8jhETDrhu7mFH6du6" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
-                >
-                  <span className="text-3xl">🤖</span>
-                  <div className="text-left">
-                    <div className="text-sm text-gray-500">안드로이드 앱</div>
-                    <div className="text-xl font-bold">테스터 신청</div>
-                  </div>
-                </a>
-                <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">
-                  9월 20일 이전 출시 예정
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.anyfesta.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-green-600 px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-3"
+              >
+                <span className="text-3xl">🤖</span>
+                <div className="text-left">
+                  <div className="text-sm text-gray-500">GET IT ON</div>
+                  <div className="text-xl font-bold">Google Play</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           
