@@ -30,11 +30,11 @@ const HomePage: React.FC = () => {
             {/* 실시간 통계 */}
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">180+</div>
+                <div className="text-3xl font-bold text-white">160+</div>
                 <div className="text-white/80 text-sm">등록된 이벤트</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">280+</div>
+                <div className="text-3xl font-bold text-white">320+</div>
                 <div className="text-white/80 text-sm">활성 사용자</div>
               </div>
               <div className="text-center">
