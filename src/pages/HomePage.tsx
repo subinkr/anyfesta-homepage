@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">실시간</div>
-                <div className="text-white/80 text-sm">채팅, 이벤트, 위치 공유</div>
+                <div className="text-white/80 text-sm">채팅, 이벤트 알림, 위치 공유</div>
               </div>
             </div>
             
