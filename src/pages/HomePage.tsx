@@ -28,6 +28,10 @@ const HomePage: React.FC = () => {
             </p>
             
             {/* 실시간 통계 */}
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white">실시간</div>
+              <div className="text-white/80 text-sm">채팅, 이벤트 알림, 위치 공유</div>
+            </div>
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">190+</div>
@@ -37,10 +41,6 @@ const HomePage: React.FC = () => {
                 <div className="text-3xl font-bold text-white">430+</div>
                 <div className="text-white/80 text-sm">활성 사용자</div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">실시간</div>
-              <div className="text-white/80 text-sm">채팅, 이벤트 알림, 위치 공유</div>
             </div>
             
             <div className="flex flex-col gap-6 justify-center">
