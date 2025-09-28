@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
                 <div className="text-white/80 text-sm">등록된 이벤트</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">560+</div>
+                <div className="text-3xl font-bold text-white">580+</div>
                 <div className="text-white/80 text-sm">활성 사용자</div>
               </div>
             </div>
