@@ -132,11 +132,11 @@ const HomePage: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 <span className="font-semibold text-yellow-600">특별한 장소를 방문하고 배지 획득!</span><br/>
                 오타쿠 성지 순례, 애니메이션 명소 탐방 등 다양한 배지 챌린지에 도전하세요. 
-                인기 배지를 확인하고 다른 유저들과 경쟁해보세요!
+                인기 배지를 확인하고 다른 유저들과 함께 즐겨보세요!
               </p>
               <div className="mt-4 flex items-center text-sm text-gray-500">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
-                장소 방문 • 배지 획득 • 도전자 순위
+                장소 방문 • 배지 획득 • 습득 유저 수
               </div>
             </div>
 
@@ -360,8 +360,8 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <span className="text-2xl mr-3">👥</span>
                   <div>
-                    <div className="font-semibold text-gray-900">도전자 수 확인</div>
-                    <div className="text-sm text-gray-600">인기 배지를 확인하고 다른 유저들과 경쟁</div>
+                    <div className="font-semibold text-gray-900">습득 유저 수 확인</div>
+                    <div className="text-sm text-gray-600">인기 배지를 확인하고 다른 유저들과 함께 도전</div>
                   </div>
                 </div>
                 <div className="flex items-start">
