@@ -106,6 +106,40 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 레벨 & 경험치 시스템 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">⭐</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">레벨 & 경험치 시스템</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-amber-600">활동할수록 성장하는 재미!</span><br/>
+                이벤트 등록, 관심 이벤트 설정, 장소 방문으로 경험치를 획득하고 레벨업하세요. 
+                나만의 오타쿠 프로필을 성장시켜보세요!
+              </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                경험치 획득 • 레벨업 • 프로필 성장
+              </div>
+            </div>
+
+            {/* 배지 챌린지 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🏆</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">배지 챌린지</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-yellow-600">특별한 장소를 방문하고 배지 획득!</span><br/>
+                오타쿠 성지 순례, 애니메이션 명소 탐방 등 다양한 배지 챌린지에 도전하세요. 
+                인기 배지를 확인하고 다른 유저들과 경쟁해보세요!
+              </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                장소 방문 • 배지 획득 • 도전자 순위
+              </div>
+            </div>
+
             {/* 실시간 채팅 */}
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
@@ -191,6 +225,40 @@ const HomePage: React.FC = () => {
               </div>
             </div>
 
+            {/* 푸시 알림 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">🔔</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">스마트 알림</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-red-600">중요한 이벤트를 놓치지 마세요!</span><br/>
+                관심 카테고리 이벤트, 관심 이벤트 시작 알림, 채팅 메시지 등 
+                맞춤형 푸시 알림으로 중요한 순간을 놓치지 않습니다.
+              </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                이벤트 알림 • 채팅 알림 • 맞춤 알림
+              </div>
+            </div>
+
+            {/* 개인 일정 관리 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-2xl">📝</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">개인 일정 관리</h3>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="font-semibold text-teal-600">나만의 일정도 함께 관리!</span><br/>
+                오타쿠 이벤트와 개인 일정을 한 곳에서 관리하세요. 
+                월별 캘린더 뷰로 모든 일정을 한눈에 확인할 수 있습니다.
+              </p>
+              <div className="mt-4 flex items-center text-sm text-gray-500">
+                <span className="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>
+                개인 일정 • 월별 뷰 • 통합 관리
+              </div>
+            </div>
+
             {/* 크로스 플랫폼 */}
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
@@ -206,6 +274,124 @@ const HomePage: React.FC = () => {
                 <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
                 iOS 앱 • Android 앱 • 웹 버전
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 레벨 & 배지 시스템 하이라이트 */}
+      <section className="bg-gradient-to-br from-amber-50 to-yellow-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-amber-100 text-amber-800 rounded-full px-4 py-2 text-sm font-medium mb-4">
+              성장 시스템
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">레벨업</span>하고 <span className="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">배지</span>를 모으세요!
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              활동할수록 성장하는 재미! 경험치를 모아 레벨업하고 특별한 배지를 획득하세요.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* 레벨 시스템 */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-amber-200">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mr-4">
+                  <span className="text-3xl">⭐</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">레벨 시스템</h3>
+                  <p className="text-gray-600">활동으로 경험치 획득</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">📝</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">이벤트 등록 +10 XP</div>
+                    <div className="text-sm text-gray-600">새로운 이벤트를 등록하면 경험치 획득</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">⭐</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">관심 이벤트 설정 +1 XP</div>
+                    <div className="text-sm text-gray-600">관심 이벤트를 추가할 때마다 경험치 획득</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">📍</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">장소 방문 +10 XP (첫 방문)</div>
+                    <div className="text-sm text-gray-600">새로운 장소를 방문하면 경험치 획득</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">🔄</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">재방문 +1 XP</div>
+                    <div className="text-sm text-gray-600">24시간 후 재방문 시 경험치 획득</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 배지 시스템 */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-yellow-200">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center mr-4">
+                  <span className="text-3xl">🏆</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">배지 챌린지</h3>
+                  <p className="text-gray-600">특별한 장소 방문으로 배지 획득</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">🗺️</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">다양한 배지 챌린지</div>
+                    <div className="text-sm text-gray-600">오타쿠 성지 순례, 애니메이션 명소 탐방 등</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">👥</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">도전자 수 확인</div>
+                    <div className="text-sm text-gray-600">인기 배지를 확인하고 다른 유저들과 경쟁</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">✅</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">완료 상태 추적</div>
+                    <div className="text-sm text-gray-600">배지별 진행 상황을 한눈에 확인</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">🎖️</span>
+                  <div>
+                    <div className="font-semibold text-gray-900">프로필에 배지 전시</div>
+                    <div className="text-sm text-gray-600">획득한 배지를 프로필에 자랑스럽게 표시</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 성장의 재미 */}
+          <div className="bg-gradient-to-r from-amber-100 to-yellow-100 rounded-2xl p-8 border border-amber-200">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                🎮 게임처럼 즐기는 오타쿠 활동!
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
+                이벤트에 참여하고, 장소를 방문하고, 배지를 모으면서 <span className="font-semibold text-amber-600">나만의 오타쿠 프로필</span>을 성장시켜보세요. 
+                레벨이 오르고 배지가 쌓일수록 더욱 특별한 경험을 할 수 있습니다!
+              </p>
             </div>
           </div>
         </div>
