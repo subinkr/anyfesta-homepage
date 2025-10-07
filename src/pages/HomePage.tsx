@@ -14,17 +14,17 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-              <span className="text-white text-sm font-medium">오타쿠 이벤트 캘린더</span>
+              <span className="text-white text-sm font-medium">오타쿠 정보 공유 플랫폼</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              오타쿠 이벤트를<br />
+              오타쿠 정보를<br />
               <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
                 한 곳에서
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
               🎭 코스프레 이벤트 • 🎵 오타쿠 라이브 공연 • 🍰 콜라보 카페 • 🛍️ 팝업스토어<br />
-              <span className="font-semibold">모든 오타쿠 행사를 한 곳에서!</span>
+              <span className="font-semibold">모든 오타쿠 정보를 한 곳에서!</span>
             </p>
             
             {/* 실시간 통계 */}
@@ -250,7 +250,7 @@ const HomePage: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">개인 일정 관리</h3>
               <p className="text-gray-600 leading-relaxed">
                 <span className="font-semibold text-teal-600">나만의 일정도 함께 관리!</span><br/>
-                오타쿠 이벤트와 개인 일정을 한 곳에서 관리하세요. 
+                오타쿠 정보와 개인 일정을 한 곳에서 관리하세요. 
                 월별 캘린더 뷰로 모든 일정을 한눈에 확인할 수 있습니다.
               </p>
               <div className="mt-4 flex items-center text-sm text-gray-500">
