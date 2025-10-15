@@ -1,0 +1,13 @@
+# SPA를 위한 리디렉션 설정
+# 모든 요청을 index.html로 리디렉션하여 React Router가 처리하도록 함
+
+# 정적 파일들은 그대로 서빙
+/static/*  /static/:splat  200
+/favicon.ico  /favicon.ico  200
+/logo192.png  /logo192.png  200
+/logo512.png  /logo512.png  200
+/robots.txt  /robots.txt  200
+/sitemap.xml  /sitemap.xml  200
+
+# 모든 다른 요청은 index.html로 리디렉션 (SPA 라우팅)
+/*  /index.html  200
