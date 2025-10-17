@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicyPage: React.FC = () => {
   const buildSection = (title: string, content: string) => (
@@ -12,6 +13,17 @@ const PrivacyPolicyPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>개인정보처리방침 - 애니페스타</title>
+        <link rel="canonical" href="https://anyfesta.com/privacy" />
+        <meta name="description" content="애니페스타의 개인정보처리방침입니다. 개인정보 수집, 이용, 보호에 관한 정책을 확인하세요." />
+        <meta property="og:url" content="https://anyfesta.com/privacy" />
+        <meta property="og:title" content="개인정보처리방침 - 애니페스타" />
+        <meta property="og:description" content="애니페스타의 개인정보처리방침입니다." />
+        <meta property="twitter:url" content="https://anyfesta.com/privacy" />
+        <meta property="twitter:title" content="개인정보처리방침 - 애니페스타" />
+        <meta property="twitter:description" content="애니페스타의 개인정보처리방침입니다." />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { HelmetProvider } from 'react-helmet-async';
 import { supabase } from './lib/supabase';
 import HomePage from './pages/HomePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -49,24 +50,26 @@ const AuthHandler: React.FC = () => {
 
 function App() {
   return (
-    <Router>
-      <div className="App min-h-screen bg-gray-50">
-        <Header />
-        <main>
-          <AuthHandler />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/privacy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms" element={<TermsOfServicePage />} />
-            <Route path="/password-reset" element={<PasswordResetPage />} />
-            <Route path="/password-reset/confirm" element={<PasswordResetConfirmPage />} />
-            <Route path="/email-verification" element={<EmailVerificationPage />} />
-          </Routes>
-        </main>
-        <Footer />
-        <Analytics />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="App min-h-screen bg-gray-50">
+          <Header />
+          <main>
+            <AuthHandler />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsOfServicePage />} />
+              <Route path="/password-reset" element={<PasswordResetPage />} />
+              <Route path="/password-reset/confirm" element={<PasswordResetConfirmPage />} />
+              <Route path="/email-verification" element={<EmailVerificationPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <Analytics />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

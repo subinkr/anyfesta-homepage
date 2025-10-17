@@ -1,8 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const HomePage: React.FC = () => {
   return (
     <div className="bg-white">
+      <Helmet>
+        <link rel="canonical" href="https://anyfesta.com/" />
+        <meta property="og:url" content="https://anyfesta.com/" />
+        <meta property="twitter:url" content="https://anyfesta.com/" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-700 via-purple-600 to-purple-500 py-20 relative overflow-hidden">
         {/* 배경 애니메이션 효과 */}

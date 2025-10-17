@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { supabase } from '../lib/supabase';
 
 const PasswordResetPage: React.FC = () => {
@@ -52,6 +53,11 @@ const PasswordResetPage: React.FC = () => {
   if (isSuccess) {
     return (
       <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <Helmet>
+          <title>비밀번호 재설정 - 애니페스타</title>
+          <link rel="canonical" href="https://anyfesta.com/password-reset" />
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -112,6 +118,11 @@ const PasswordResetPage: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>비밀번호 재설정 - 애니페스타</title>
+        <link rel="canonical" href="https://anyfesta.com/password-reset" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">

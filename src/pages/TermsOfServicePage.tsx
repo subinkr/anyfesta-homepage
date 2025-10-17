@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const TermsOfServicePage: React.FC = () => {
   const buildSection = (title: string, content: string) => (
@@ -12,6 +13,17 @@ const TermsOfServicePage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>이용약관 - 애니페스타</title>
+        <link rel="canonical" href="https://anyfesta.com/terms" />
+        <meta name="description" content="애니페스타의 서비스 이용약관입니다. 서비스 이용 시 권리와 의무를 확인하세요." />
+        <meta property="og:url" content="https://anyfesta.com/terms" />
+        <meta property="og:title" content="이용약관 - 애니페스타" />
+        <meta property="og:description" content="애니페스타의 서비스 이용약관입니다." />
+        <meta property="twitter:url" content="https://anyfesta.com/terms" />
+        <meta property="twitter:title" content="이용약관 - 애니페스타" />
+        <meta property="twitter:description" content="애니페스타의 서비스 이용약관입니다." />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
