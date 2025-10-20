@@ -7,7 +7,7 @@
   <!-- 홈페이지 -->
   <url>
     <loc>https://anyfesta.com/</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- 개인정보처리방침 -->
   <url>
     <loc>https://anyfesta.com/privacy</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- 이용약관 -->
   <url>
     <loc>https://anyfesta.com/terms</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- 비밀번호 재설정 -->
   <url>
     <loc>https://anyfesta.com/password-reset</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- 이메일 인증 -->
   <url>
     <loc>https://anyfesta.com/email-verification</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

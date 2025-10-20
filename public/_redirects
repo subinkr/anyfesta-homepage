@@ -1,3 +1,6 @@
+# 이 파일은 Netlify용입니다.
+# Vercel을 사용하는 경우 vercel.json 파일을 사용하세요.
+
 # SPA를 위한 리디렉션 설정
 # 모든 요청을 index.html로 리디렉션하여 React Router가 처리하도록 함
 
