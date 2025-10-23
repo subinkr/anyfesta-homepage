@@ -34,14 +34,14 @@ const HomePage: React.FC = () => {
             </p>
             
             {/* 실시간 통계 */}
-            <div className="text-center">
+            <div className="text-center mb-10">
               <div className="text-3xl font-bold text-white">실시간</div>
               <div className="text-white/80 text-sm">채팅, 이벤트 알림, 위치 공유</div>
             </div>
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">100+</div>
-                <div className="text-white/80 text-sm">등록된 이벤트</div>
+                <div className="text-white/80 text-sm">예정된 이벤트</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">1000+</div>
